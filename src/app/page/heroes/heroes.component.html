@@ -1,1 +1,29 @@
-<p>heroes works!</p>
+<div class="row">
+  <div class="col-4 offset-8 mt-3 mb-3">
+    <input (keyup)="onChangeFilter($event)" type="text" class="form-control" placeholder="Search...">
+  </div>
+</div>
+
+<div>
+  <h1>Heroes</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Super Power</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of heroes | async | filter:filterStr">
+        <td>{{hero.id}}</td>
+        <td>{{hero.name}} </td>
+        <td>{{hero.superPower}}</td>
+        <td>{{hero.address}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
