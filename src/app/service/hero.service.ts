@@ -34,7 +34,7 @@ export class HeroService {
     },
     {
     id: 5,
-    name: 'Doctor Stranger',
+    name: 'Doctor Strange',
     superPower: 'dimension traveller',
     address: 'New York'
     },

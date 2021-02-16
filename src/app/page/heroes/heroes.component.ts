@@ -11,6 +11,7 @@ import { HeroService } from 'src/app/service/hero.service';
 export class HeroesComponent implements OnInit {
   heroes$: BehaviorSubject<Hero[]> = this.heroService.list$;
   filterStr: any;
+  columnKey: string = '';
   
   constructor(
     private heroService: HeroService,
@@ -24,5 +25,8 @@ export class HeroesComponent implements OnInit {
     this.filterStr = (event.target as HTMLInputElement).value;
   }
  
+  onColumnSelect(key: string): void {
+    this.columnKey = key;
+  }
 
 }
