@@ -1,6 +1,9 @@
 <div class="row">
-  <div class="col-4 offset-8 mt-3 mb-3">
-    <input (keyup)="onChangeFilter($event)" type="text" class="form-control" placeholder="Search...">
+  <div class="input-group col-4 offset-8 mt-3 mb-3">
+    <input (keyup)="onChangeFilter($event)" type="text" class="form-control" placeholder="Search for a hero...">
+    <div class="input-group-append">
+    <button class="btn btn-info" type="submit"><i class="fa fa-search"></i></button>
+</div>
   </div>
 </div>
 
@@ -17,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let hero of heroes | async | filter:filterStr">
+      <tr *ngFor="let hero of heroes$ | async | filter:filterStr">
         <td>{{hero.id}}</td>
         <td>{{hero.name}} </td>
         <td>{{hero.superPower}}</td>

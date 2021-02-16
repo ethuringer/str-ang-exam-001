@@ -9,9 +9,9 @@ import { HeroService } from 'src/app/service/hero.service';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  heroes: BehaviorSubject<Hero[]> = this.heroService.list$;
-  filterStr: string = '';
-
+  heroes$: BehaviorSubject<Hero[]> = this.heroService.list$;
+  filterStr: any;
+  
   constructor(
     private heroService: HeroService,
   ) { }
@@ -23,5 +23,6 @@ export class HeroesComponent implements OnInit {
   onChangeFilter(event: Event): void {
     this.filterStr = (event.target as HTMLInputElement).value;
   }
+ 
 
 }
